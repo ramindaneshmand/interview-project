@@ -1,0 +1,10 @@
+@if (form && formField) {
+  <div class="main-container">
+    <form [formGroup]="form">
+      <mat-form-field class="example-form-field" appearance="outline">
+        <mat-label>{{ formField.label }}</mat-label>
+        <textarea  matInput type="text" [formControlName]="formField.key"></textarea>
+      </mat-form-field>
+    </form>
+  </div>
+}

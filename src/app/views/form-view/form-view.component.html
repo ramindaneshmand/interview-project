@@ -1,0 +1,24 @@
+@if (formFields && form) {
+  <div class="main-container">
+    <form [formGroup]="form">
+      @for (formField of formFields; track formField.id) {
+        @switch (formField.view) {
+          @case ('text-box') {
+            <app-text-box-form-field [formField]="formField"></app-text-box-form-field>
+          }
+          @case ('text-area') {
+            <app-text-area-form-field [formField]="formField"></app-text-area-form-field>
+          }
+          @case ('dropdown') {
+            <app-dropdown-form-field [formField]="formField"></app-dropdown-form-field>
+          }
+        }
+      }
+    </form>
+    @if (form?.dirty && panel?.calculatedWidth) {
+      <div class="form-footer">
+        <div class="form-button" (click)="save()">Save</div>
+      </div>
+    }
+  </div>
+}

@@ -1,0 +1,11 @@
+@if (panels.length > 0) {
+  <div style="display: flex;justify-content: center;">
+    @for (panel of panels; track panel.id) {
+      @if (panel.visible) {
+        <div [ngStyle]="{width: panel.calculatedWidth + '%', height: (window.innerHeight - 70) + 'px'}">
+          <app-panel [panel]="panel" [layoutKey]="layout?.key" [params]="params"></app-panel>
+        </div>
+      }
+    }
+  </div>
+}

@@ -46,21 +46,7 @@ export class FormViewComponent extends ViewComponent implements OnInit {
     })
   }
   save(): void {
-    if (this.id !== 'new') {
-      this.connectorService.update(this.form?.value)?.subscribe(
-        response => {
-          this.formData = response;
-          console.log(this.form);
-          this.form?.markAsPristine();
-        }
-      );
-    } else if (this.id === 'new') {
-      this.connectorService.add(this.form?.value)?.subscribe(
-        response => {
-          this.route.navigate([`home/${response.id}`]);
-        }
-      );
-    }
+    // todo
   }
 
   private getData(id: string): void {

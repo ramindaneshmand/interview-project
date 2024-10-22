@@ -43,9 +43,7 @@ export class ConnectorService {
       map((data) => data[0])
     )
   }
-  update(update: Update<any>): Observable<any> | undefined {
-    return this.state?.update(update);
-  }
+
   add(value: any): Observable<any> | undefined {
     return this.state?.add(value);
   }
